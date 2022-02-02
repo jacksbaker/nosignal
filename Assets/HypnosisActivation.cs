@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HypnosisActivation : MonoBehaviour
 {
@@ -9,6 +10,17 @@ public class HypnosisActivation : MonoBehaviour
     public float timer;
 
     public GameObject panel;
+
+    //static public bool followPlayer;
+    static public bool ride;
+
+    //public NavMeshAgent enemy;
+    //public Transform Player;
+
+    //Vector2 newPosition;
+
+    public float speed = 1.5f;
+    private Vector2 target;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +31,10 @@ public class HypnosisActivation : MonoBehaviour
         GameObject panel = GameObject.Find("Panel");
 
         panel.SetActive(false);
+
+        //newPosition = transform.position;
+
+        target = transform.position;
     }
 
     // Update is called once per frame
@@ -32,6 +48,11 @@ public class HypnosisActivation : MonoBehaviour
             
             coll.SetActive(true);
             timer = 5;
+
+        }
+
+        else if(ride == true)
+        {
 
         }
     }

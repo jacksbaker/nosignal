@@ -7,7 +7,8 @@ public class Hypnosis : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject thePlayer = GameObject.Find("J.Y. Park");
+        Command playerScript = thePlayer.GetComponent<Command>();
     }
 
     // Update is called once per frame
@@ -18,9 +19,9 @@ public class Hypnosis : MonoBehaviour
 
 
 
-    void followPlayer()
+    public void followPlayer()
     {
-        Debug.Log("Follow Player");
+        Command.followPlayer = true;
     }
 
 }
