@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Telekinesis : MonoBehaviour
 {
-    public bool telekinesis;
+    public bool telekinesisActive;
     public float timer;
     public float moveSpeed = 15;
+ 
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0f;
-        telekinesis = false;
+        telekinesisActive = false;
+
+
+        
     }
 
     // Update is called once per frame
@@ -25,22 +29,26 @@ public class Telekinesis : MonoBehaviour
         if (Input.GetKey("t"))
         {
             timer = 5;
-            telekinesis = true;
+            telekinesisActive = true;
+
+
 
         }
-        
+
         else if (Input.GetButtonDown("Fire1"))
         {
-            telekinesis = false;
+            telekinesisActive = false;
+
         }
 
-        else if (timer >= 0 && telekinesis == true)
+        else if (timer >= 0 && telekinesisActive == true)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = Vector2.MoveTowards(transform.position, mousePosition, moveSpeed * Time.deltaTime);
-
-            
-
+        }
+        else
+        {
+            telekinesisActive = false;
         }
     }
 }

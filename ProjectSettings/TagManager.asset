@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hypnosis
+  - FallingObject
   layers:
   - Default
   - TransparentFX
