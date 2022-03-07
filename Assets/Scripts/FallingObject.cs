@@ -34,10 +34,17 @@ public class FallingObject : MonoBehaviour
 
         }
 
+        else if (fallingObjectIsTrue == true && gameObject.GetComponent<Telekinesis>().telekinesisActive == true)
+        {
+            gravity.gravityScale = 0;
+        }
+
+
         else if (fallingObjectIsTrue == true)
         {
-            Debug.Log("Hello there");
             gravity.gravityScale = 1;
         }
+
+
     }
 }

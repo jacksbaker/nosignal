@@ -28,7 +28,7 @@ public class FallingObjectPressurePlate : MonoBehaviour
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == "Player")
+            if (collision.tag == "Player" && fallingObjectScript.GetComponent<StopTime>().stopTime != true)
             {
             //stopwatch = 5;
             FallingObject.fallingObjectIsTrue = true;

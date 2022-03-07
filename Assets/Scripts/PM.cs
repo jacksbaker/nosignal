@@ -27,6 +27,10 @@ public class PM : MonoBehaviour
 
     private static bool playerExists;
 
+    public bool superSpeed;
+
+    public float stopwatch;
+
 
 
 
@@ -72,20 +76,33 @@ public class PM : MonoBehaviour
     void Update()
     {
 
-        dirX = Input.GetAxisRaw("Horizontal");
+        stopwatch -= Time.deltaTime;
 
-        if (speedBuff == true)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            
-            moveSpeed = 12f;
 
+            superSpeed = true;
+            stopwatch = 5;
 
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
 
-        else if (slowness == true)
+
+        if (stopwatch < 0)
         {
-            moveSpeed = 4f;
+            superSpeed = false;
+        }
+
+
+
+
+        dirX = Input.GetAxisRaw("Horizontal");
+
+        if (superSpeed == true && stopwatch >= 0)
+        {
+            
+            moveSpeed = 16f;
+
+
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
         }
 
