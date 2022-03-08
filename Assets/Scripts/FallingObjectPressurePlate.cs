@@ -6,12 +6,17 @@ public class FallingObjectPressurePlate : MonoBehaviour
 {
     // Start is called before the first frame update
     //public float stopwatch;
-    public GameObject fallingObjectScript;
+     private GameObject fallingObjectScript;
+
+    private GameObject player;
 
     void Start()
     {
             GameObject fallingObejct = GameObject.Find("Object");
             FallingObject fallingObjectScript = fallingObejct.GetComponent<FallingObject>();
+
+        player = GameObject.Find("Player");
+
     }
 
         // Update is called once per frame
@@ -28,7 +33,7 @@ public class FallingObjectPressurePlate : MonoBehaviour
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == "Player" && fallingObjectScript.GetComponent<StopTime>().stopTime != true)
+            if (collision.tag == "Player" && player.GetComponent<StopTime>().stopTime != true)
             {
             //stopwatch = 5;
             FallingObject.fallingObjectIsTrue = true;

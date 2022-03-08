@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hypnosis
   - FallingObject
+  - GM
   layers:
   - Default
   - TransparentFX
