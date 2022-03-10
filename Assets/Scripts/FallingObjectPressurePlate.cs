@@ -8,7 +8,7 @@ public class FallingObjectPressurePlate : MonoBehaviour
     //public float stopwatch;
      private GameObject fallingObjectScript;
 
-    private GameObject player;
+     private GameObject player;
 
     void Start()
     {
